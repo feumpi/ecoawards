@@ -11,12 +11,13 @@ import { Icon } from "@iconify/react";
 
 import { Slider } from "@/components/ui/slider";
 import { Progress } from "@/components/ui/progress";
-import { useState } from "react";
 import { Button } from "./ui/button";
 
+import useAppStore from "@/store";
+
 const GoalCard = () => {
-  const [points] = useState(1450);
-  const [goal, setGoal] = useState(2000);
+  const user = useAppStore((state) => state.user);
+  const setUserGoal = useAppStore((state) => state.setUserGoal);
 
   return (
     <>
@@ -40,33 +41,37 @@ const GoalCard = () => {
 
               <div className="p-4 py-8 flex gap-2">
                 <Slider
-                  defaultValue={[goal]}
+                  defaultValue={[user.goal]}
                   min={1000}
                   max={3000}
-                  onValueChange={(values) => setGoal(values[0])}
+                  onValueChange={(values) => setUserGoal(values[0])}
                   step={100}
                 />
-                <div className="bg-gray-200 rounded-lg p-1 px-2">{goal}</div>
+                <div className="bg-gray-200 rounded-lg p-1 px-2">
+                  {user.goal}
+                </div>
               </div>
             </DialogContent>
           </Dialog>
         </div>
-        {points < goal && (
+        {user.points < user.goal && (
           <div className="flex flex-col gap-1">
             <p className="flex items-end gap-2">
-              <span className="text-3xl">{points}</span>{" "}
-              <span className="text-lg opacity-80">/ {goal} Eco-pontos</span>
+              <span className="text-3xl">{user.points}</span>{" "}
+              <span className="text-lg opacity-80">
+                / {user.goal} Eco-pontos
+              </span>
             </p>
-            <Progress value={(points / goal) * 100} />
+            <Progress value={(user.points / user.goal) * 100} />
           </div>
         )}
 
-        {points >= goal && (
+        {user.points >= user.goal && (
           <div className="flex flex-col gap-2 items-end">
             <div className="flex flex-col gap-1">
               <p className="text-2xl font-bold">Parabéns! 🎉</p>
               <p className="text-lg">
-                Você já alcançou sua meta de {goal} Eco-pontos.
+                Você já alcançou sua meta de {user.goal} Eco-pontos.
               </p>
             </div>
             <Button variant="outline" className="text-black flex gap-2 text-md">
