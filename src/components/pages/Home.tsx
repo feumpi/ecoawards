@@ -1,5 +1,6 @@
 import GoalCard from "../GoalCard";
 import { Icon } from "@iconify/react";
+import { Link } from "react-router-dom";
 
 const greeting = () => {
   const date = new Date();
@@ -25,9 +26,12 @@ const Home = () => {
               Quantos pontos você vai fazer hoje? 🔥
             </p>
           </div>
-          <div className="bg-indigo-600 rounded-full flex items-center justify-center h-10 w-10 text-lg text-white">
+          <Link
+            to="/perfil"
+            className="bg-indigo-600 rounded-full flex items-center justify-center h-10 w-10 text-lg text-white"
+          >
             F
-          </div>
+          </Link>
         </div>
 
         <GoalCard />
@@ -37,12 +41,25 @@ const Home = () => {
 
           <div className="flex flex-col gap-4 flex-wrap">
             <div className="flex gap-4">
-              <HomeAction title="Meu progresso" icon="mdi:chart-line" />
-              <HomeAction title="Ranking de amigos" icon="mdi:medal-outline" />
+              <HomeAction
+                to="/progresso"
+                title="Meu progresso"
+                icon="mdi:chart-line"
+              />
+              <HomeAction
+                to="/ranking"
+                title="Ranking de amigos"
+                icon="mdi:medal-outline"
+              />
             </div>
             <div className="flex gap-4">
-              <HomeAction title="Rotas de corrida" icon="gis:map-poi" />
               <HomeAction
+                to="/rotas"
+                title="Rotas de corrida"
+                icon="gis:map-poi"
+              />
+              <HomeAction
+                to="/sustentabilidade"
                 title="Descubra sustentabilidade"
                 icon="tabler:leaf"
               />
@@ -57,15 +74,19 @@ const Home = () => {
 interface HomeActionProps {
   title: string;
   icon: string;
+  to: string;
 }
 
-const HomeAction = ({ title, icon }: HomeActionProps) => {
+const HomeAction = ({ title, icon, to }: HomeActionProps) => {
   return (
     <>
-      <div className="w-1/2 rounded-lg bg-gray-200 flex flex-col gap-2 items-center justify-around p-4">
+      <Link
+        to={to}
+        className="w-1/2 rounded-lg bg-gray-200 flex flex-col gap-2 items-center justify-around p-4"
+      >
         <Icon icon={icon} className="text-5xl" />
         <p className="text-lg font-bold text-center">{title}</p>
-      </div>
+      </Link>
     </>
   );
 };
