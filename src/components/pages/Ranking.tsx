@@ -22,7 +22,7 @@ const Ranking = () => {
           </div>
         ))}
 
-        <div className="grow flex items-center justify-center opacity-15">
+        <div className="grow flex items-center justify-center opacity-15 rotate-[-30deg]">
           <Icon icon="mdi:podium-gold" className="text-primary h-60 w-60" />
         </div>
       </div>
