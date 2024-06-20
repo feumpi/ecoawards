@@ -16,7 +16,52 @@ const appStore = create<AppState>()(
         lastName: "Umpierre",
         points: 1450,
         goal: 2000,
-        bgClass: "bg-purple-700",
+        profilePicture: "https://github.com/feumpi.png",
+        bannerPicture:
+          "https://pbs.twimg.com/profile_banners/1343985485501370368/1710347590/600x200",
+        products: [
+          {
+            title: "Garrafa Sustentável",
+            picture:
+              "https://img.freepik.com/fotos-premium/uma-garrafa-de-agua-ecologica-e-sustentavel-feita-de-bambu-generativo-ai_601748-46418.jpg",
+          },
+          {
+            title: "Bicicleta sustentável",
+            picture:
+              "https://conexaoplaneta.com.br/wp-content/uploads/2019/01/feita-de-plastico-reciclado-bicicleta-brasileira-nao-tem-solda-nem-enferruja-6-conexao-planeta.jpg",
+          },
+        ],
+        updates: [
+          {
+            icon: "mdi:run-fast",
+            title: "Corrida em alta velocidade",
+            points: "300",
+          },
+          {
+            icon: "mdi:walk",
+            title: "Caminhada",
+            points: "50",
+          },
+          {
+            icon: "mdi:run",
+            title: "Corrida simples",
+            points: "150",
+          },
+        ],
+        conquistas: [
+          {
+            title: "EcoWarrior",
+            icon: "tabler:helmet",
+          },
+          {
+            title: "EcoFriendly",
+            icon: "mdi:leaf",
+          },
+          {
+            title: "EcoRunner",
+            icon: "mdi:run",
+          },
+        ],
         friends: [
           {
             firstName: "Nichole",
@@ -24,7 +69,12 @@ const appStore = create<AppState>()(
             points: 5000,
             goal: 2000,
             friends: [],
-            bgClass: "bg-sky-700",
+            profilePicture: "https://github.com/nicholetzs.png",
+            bannerPicture:
+              "https://pbs.twimg.com/profile_banners/1343985485501370368/1710347590/600x200",
+            products: [],
+            conquistas: [],
+            updates: [],
           },
           {
             firstName: "Vinicius",
@@ -32,7 +82,12 @@ const appStore = create<AppState>()(
             points: 500,
             goal: 2000,
             friends: [],
-            bgClass: "bg-green-600",
+            profilePicture: "https://github.com/vinicgobbi.png",
+            bannerPicture:
+              "https://pbs.twimg.com/profile_banners/1343985485501370368/1710347590/600x200",
+            products: [],
+            conquistas: [],
+            updates: [],
           },
           {
             firstName: "Jeronymo",
@@ -40,7 +95,12 @@ const appStore = create<AppState>()(
             points: 230,
             goal: 2000,
             friends: [],
-            bgClass: "bg-pink-600",
+            profilePicture: "https://github.com/jeronymo.png",
+            bannerPicture:
+              "https://pbs.twimg.com/profile_banners/1343985485501370368/1710347590/600x200",
+            products: [],
+            conquistas: [],
+            updates: [],
           },
         ],
       },

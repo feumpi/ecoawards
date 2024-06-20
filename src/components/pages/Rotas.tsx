@@ -35,7 +35,9 @@ const Rotas = () => {
         />
 
         {routes.map((route) => (
-          <RouteItem {...route} />
+          <div key={route.name}>
+            <RouteItem {...route} />
+          </div>
         ))}
       </div>
     </>

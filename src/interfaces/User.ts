@@ -4,7 +4,21 @@ interface User {
   points: number;
   goal: number;
   friends: User[];
-  bgClass: string;
+  profilePicture: string;
+  bannerPicture: string;
+  conquistas: {
+    title: string;
+    icon: string;
+  }[];
+  updates: {
+    icon: string;
+    title: string;
+    points: string;
+  }[];
+  products: {
+    title: string;
+    picture: string;
+  }[];
 }
 
 export default User;

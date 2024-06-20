@@ -1,6 +1,8 @@
 import GoalCard from "../GoalCard";
 import { Icon } from "@iconify/react";
 import { Link } from "react-router-dom";
+import useAppState from "@/store";
+import PerfilModal from "../PerfilModal";
 
 const greeting = () => {
   const date = new Date();
@@ -16,22 +18,21 @@ const greeting = () => {
 };
 
 const Home = () => {
+  const user = useAppState((state) => state.user);
+
   return (
     <>
       <div className="flex flex-col gap-8">
         <div className="flex justify-between">
           <div className="flex flex-col gap-2">
-            <p className="text-3xl font-bold">{greeting()}, Felipe</p>
+            <p className="text-3xl font-bold">
+              {greeting()}, {user.firstName}
+            </p>
             <p className="text-slate-600 text-lg">
-              Quantos pontos você vai fazer hoje? 🔥
+              Quantos pontos você vai fazer hoje?
             </p>
           </div>
-          <Link
-            to="/perfil"
-            className="bg-indigo-600 rounded-full flex items-center justify-center h-10 w-10 text-lg text-white"
-          >
-            F
-          </Link>
+          <PerfilModal user={user} />
         </div>
 
         <GoalCard />

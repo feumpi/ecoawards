@@ -2,6 +2,7 @@ import { Icon } from "@iconify/react";
 import clsx from "clsx";
 
 import { NavLink } from "react-router-dom";
+import RunningModal from "../RunningModal";
 
 const Navbar = () => {
   return (
@@ -9,9 +10,9 @@ const Navbar = () => {
       <div className="w-full bg-white rounded-lg p-2 flex space-around">
         <NavbarItem to="/" title="Início" icon="bx:bx-home" />
         <NavbarItem to="/buscar" title="Buscar" icon="mdi:search" />
-        <div className="w-72 mx-4 h-14 rounded-full bg-primary text-white flex items-center justify-center mt-[-20px]">
-          <Icon icon="mdi:run-fast" className="text-3xl" />
-        </div>
+
+        <RunningModal />
+
         <NavbarItem to="/chat" title="Chat" icon="mdi:chat-outline" />
         <NavbarItem to="/notificacoes" title="Notif." icon="mdi:bell-outline" />
       </div>

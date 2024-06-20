@@ -51,7 +51,10 @@ const RankingItem = ({ user: currentUser, position }: RankingItemProps) => {
       <div
         className={`h-12 w-12 bg-primary text-white rounded-full flex items-center justify-center text-xl font-bold`}
       >
-        {currentUser.firstName[0]}
+        <img
+          src={currentUser.profilePicture}
+          className="w-full h-full rounded-full"
+        />
       </div>
       <div className=" flex flex-col grow">
         <p className="text-xl font-bold">

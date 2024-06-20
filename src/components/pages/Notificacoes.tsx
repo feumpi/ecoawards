@@ -62,7 +62,9 @@ const Notificacoes = () => {
 
         <div className="flex flex-col gap-3 mt-4">
           {notifications.map((notification) => (
-            <NotificationItem {...notification} />
+            <div key={notification.content}>
+              <NotificationItem {...notification} />
+            </div>
           ))}
         </div>
       </div>

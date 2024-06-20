@@ -7,7 +7,6 @@ import Progresso from "./components/pages/Progresso";
 import Ranking from "./components/pages/Ranking";
 import Rotas from "./components/pages/Rotas";
 import Sustentabilidade from "./components/pages/Sustentabilidade";
-import Perfil from "./components/pages/Perfil";
 
 import WithNavbar from "./components/layout/WithNavbar";
 
@@ -62,10 +61,6 @@ const App = () => {
     {
       path: "/sustentabilidade",
       element: <Sustentabilidade />,
-    },
-    {
-      path: "/perfil",
-      element: <Perfil />,
     },
   ]);
 
